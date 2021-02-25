@@ -33,7 +33,7 @@
             ?>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Prénom utilisateur <span class="glyphicon glyphicon-user"></span></a></li>
-                    <li><a href="#">Deconnect <span class="glyphicon glyphicon-log-out"></span></a></li>
+                    <li><a href="../../src/deconnect.model.php">Deconnect <span class="glyphicon glyphicon-log-out"></span></a></li>
                 </ul>
             <?php
             }

@@ -18,8 +18,8 @@ if (empty($errorFormulaire)) {
         $_SESSION['login'] = $login;
         $_SESSION['password'] = $password;
 
-        header('Location:pages/admin.php');
+        header('Location:./pages/admin.php');
     } else {
-        $erreur =  "login ou mot de pass incorrecte !";
+        echo "login ou mot de pass incorrecte !";
     }
 }

@@ -6,6 +6,7 @@ if (isset($_POST['submit'])) {
 
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +30,7 @@ if (isset($_POST['submit'])) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand " href="#">Systeme Gestion Client</a>
+            <a class="navbar-brand" href="#">Systeme Gestion Client</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,7 +38,7 @@ if (isset($_POST['submit'])) {
 
             <?php
 
-            if (isset($logged)) {
+            if (isset($login)) {
             ?>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Prénom utilisateur <span class="glyphicon glyphicon-user"></span></a></li>
@@ -57,17 +58,12 @@ if (isset($_POST['submit'])) {
 
             <?php
 
-            if (isset($logged)) {
+            if (isset($login)) {
             ?>
                 <p class="lead container">
-                <p>
-                <p> <?php if (isset($erreur)) {
-                        echo $erreur;
-                    } ?></p>
-                </p>
-                <a class="btn btn-primary btn-lg button-option" href="admin.php?action=inscription" role="button">inscription</a>
-                <a class="btn btn-primary btn-lg button-option" href="admin.php?action=liste" role="button">liste</a>
-                <a class="btn btn-primary btn-lg button-option" href="admin.php?action=delete" role="button">delete</a>
+                    <a class="btn btn-primary btn-lg button-option" href="admin.php?action=inscription" role="button">inscription</a>
+                    <a class="btn btn-primary btn-lg button-option" href="admin.php?action=liste" role="button">liste</a>
+                    <a class="btn btn-primary btn-lg button-option" href="admin.php?action=delete" role="button">delete</a>
                 </p>
             <?php
             } else {

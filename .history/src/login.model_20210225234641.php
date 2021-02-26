@@ -20,6 +20,6 @@ if (empty($errorFormulaire)) {
 
         header('Location:pages/admin.php');
     } else {
-        $erreur =  "login ou mot de pass incorrecte !";
+        echo "login ou mot de pass incorrecte !";
     }
 }

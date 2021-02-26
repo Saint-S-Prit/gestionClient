@@ -1,10 +1,12 @@
 <?php
-
-if (isset($_POST['submit'])) {
-    include 'src/login.model.php';
+session_start();
+if (empty($_SESSION['login'])) {
+    header('Location:./index.php');
 }
-
+$login = true;
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +31,7 @@ if (isset($_POST['submit'])) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand " href="#">Systeme Gestion Client</a>
+            <a class="navbar-brand" href="#">Systeme Gestion Client</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,7 +39,7 @@ if (isset($_POST['submit'])) {
 
             <?php
 
-            if (isset($logged)) {
+            if (isset($login)) {
             ?>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Prénom utilisateur <span class="glyphicon glyphicon-user"></span></a></li>
@@ -57,17 +59,12 @@ if (isset($_POST['submit'])) {
 
             <?php
 
-            if (isset($logged)) {
+            if (isset($login)) {
             ?>
                 <p class="lead container">
-                <p>
-                <p> <?php if (isset($erreur)) {
-                        echo $erreur;
-                    } ?></p>
-                </p>
-                <a class="btn btn-primary btn-lg button-option" href="admin.php?action=inscription" role="button">inscription</a>
-                <a class="btn btn-primary btn-lg button-option" href="admin.php?action=liste" role="button">liste</a>
-                <a class="btn btn-primary btn-lg button-option" href="admin.php?action=delete" role="button">delete</a>
+                    <a class="btn btn-primary btn-lg button-option" href="admin.php?action=inscription" role="button">inscription</a>
+                    <a class="btn btn-primary btn-lg button-option" href="admin.php?action=liste" role="button">liste</a>
+                    <a class="btn btn-primary btn-lg button-option" href="admin.php?action=delete" role="button">delete</a>
                 </p>
             <?php
             } else {
@@ -80,31 +77,29 @@ if (isset($_POST['submit'])) {
         </div>
 
         <div class="container">
+            <?php
+            if (isset($_GET['action'])) {
+
+                $action = $_GET['action'];
+                switch ($action) {
+                    case 'inscription':
+                        include 'registor.php';
+                        break;
+                    case 'liste':
+                        include 'liste.php';
+                        break;
+                    case 'delete':
+                        include 'delete.php';
+                        break;
+                    default:
+                        echo "defaut";
+                        break;
+                }
+            }
+            ?>
 
 
 
-
-
-            <section class="container">
-
-                <section class="login-form">
-                    <form method="post">
-                        <input type="text" name="login" placeholder="Login" class="form-control input-lg" value="<?php if (isset($login)) {
-                                                                                                                        echo $login;
-                                                                                                                    } ?>" />
-                        <span class="help-block"><?php if (isset($errorFormulaire['login'])) {
-                                                        echo $errorFormulaire['login'];
-                                                    } ?></span>
-                        <input type="password" name="password" placeholder="Password" class="form-control input-lg" value="<?php if (isset($password)) {
-                                                                                                                                echo $password;
-                                                                                                                            } ?>" />
-                        <span class="help-block"><?php if (isset($errorFormulaire['password'])) {
-                                                        echo $errorFormulaire['password'];
-                                                    } ?></span>
-                        <button type="submit" name="submit" class="btn btn-lg btn-primary btn-block">connection</button>
-                    </form>
-                </section>
-            </section>
 
         </div>
 

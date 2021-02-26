@@ -3,7 +3,7 @@ session_start();
 if (empty($_SESSION['login'])) {
     header('Location:./index.php');
 }
-$logged = true;
+$login = true;
 ?>
 
 
@@ -15,9 +15,9 @@ $logged = true;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/bootstrap/css/bootstrap.min.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="public/css/style.css">
     <title>Document</title>
 </head>
 
@@ -39,11 +39,11 @@ $logged = true;
 
             <?php
 
-            if (isset($logged)) {
+            if (isset($login)) {
             ?>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Prénom utilisateur <span class="glyphicon glyphicon-user"></span></a></li>
-                    <li><a href="../src/deconnect.model.php">Deconnect <span class="glyphicon glyphicon-log-out"></span></a></li>
+                    <li><a href="../../src/deconnect.model.php">Deconnect <span class="glyphicon glyphicon-log-out"></span></a></li>
                 </ul>
             <?php
             }
@@ -59,7 +59,7 @@ $logged = true;
 
             <?php
 
-            if (isset($logged)) {
+            if (isset($login)) {
             ?>
                 <p class="lead container">
                     <a class="btn btn-primary btn-lg button-option" href="admin.php?action=inscription" role="button">inscription</a>
@@ -101,17 +101,6 @@ $logged = true;
 
 
 
-        </div>
-
-        <div class="footer">
-
-            <p>
-                copyright @2021 Magib
-            </p>
-        </div>
-        <script src="../public/css/bootstrap/js/ajax.js"></script>
-        <script src="../public/css/bootstrap/js/bootstrap.js"></script>
-        <script src="../public/js/javascript.js"></script>
-</body>
-
-</html>
+            <?php
+            include 'incl/_footer.php'
+            ?>

@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand " href="#">Systeme Gestion Client</a>
+            <a class="navbar-brand" href="#">Systeme Gestion Client</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

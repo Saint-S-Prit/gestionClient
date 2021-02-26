@@ -5,9 +5,6 @@
   padding-top: 0px;
   height: 100px;
 }
-.navbar-brand {
-  color: #2e6da4 !important;
-}
 
 .button-option {
   margin-top: 50px;
@@ -78,3 +75,6 @@ form[role="login"] > div {
   width: 50%;
   margin: 0 auto;
 }
+
+
+

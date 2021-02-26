@@ -39,7 +39,7 @@ $logged = true;
 
             <?php
 
-            if (isset($logged)) {
+            if (isset($login)) {
             ?>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Prénom utilisateur <span class="glyphicon glyphicon-user"></span></a></li>
@@ -59,7 +59,7 @@ $logged = true;
 
             <?php
 
-            if (isset($logged)) {
+            if (isset($login)) {
             ?>
                 <p class="lead container">
                     <a class="btn btn-primary btn-lg button-option" href="admin.php?action=inscription" role="button">inscription</a>
